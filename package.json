@@ -1,0 +1,27 @@
+{
+  "name": "vue-directive-props",
+  "version": "1.0.0",
+  "description": "Rest and spread properties for component directive",
+  "main": "build/vue-props.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "props",
+    "spread",
+    "directive",
+    "properties"
+  ],
+  "author": "ijse",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.3",
+    "babel-preset-es2015": "^6.5.0"
+  },
+  "devDependencies": {
+    "webpack": "^1.12.13"
+  }
+}
