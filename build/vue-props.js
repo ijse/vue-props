@@ -75,7 +75,13 @@
 	
 	                // set the last component child as the current
 	                var comp = this.vm.$children[this.vm.$children.length - 1];
-	                var values = this._scope.$eval(this.expression);
+	                var values = null;
+	                if (this._scope && this._scope.$eval) {
+	                    values = this._scope.$eval(this.expression);
+	                } else {
+	                    values = this.vm.$eval(this.expression);
+	                }
+	
 	                if ((typeof values === 'undefined' ? 'undefined' : _typeof(values)) !== 'object' || values instanceof Array) {
 	                    values = { data: values };
 	                }
@@ -111,8 +117,6 @@
 /* 2 */
 /***/ function(module, exports) {
 
-	'use strict';
-	
 	module.exports = {
 	  entry: './index.js',
 	  output: {
@@ -120,15 +124,18 @@
 	    filename: 'vue-props.js'
 	  },
 	  module: {
-	    loaders: [{
-	      test: /\.js$/,
-	      exclude: /node_modules/,
-	      loader: 'babel',
-	      query: { presets: ['es2015'] }
-	    }]
+	    loaders: [
+	      {
+	        test: /index.js$/,
+	        exclude: /node_modules/,
+	        loader: 'babel',
+	        query: { presets: ['es2015'] }
+	      }
+	    ]
 	  },
 	  devtool: '#source-map'
-	};
+	}
+
 
 /***/ }
 /******/ ]);

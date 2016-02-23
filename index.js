@@ -15,7 +15,13 @@ export default {
 
                 // set the last component child as the current
                 let comp = this.vm.$children[this.vm.$children.length - 1];
-                let values = this._scope.$eval(this.expression);
+                let values = null;
+                if(this._scope && this._scope.$eval) {
+                    values = this._scope.$eval(this.expression);
+                } else {
+                    values = this.vm.$eval(this.expression);
+                }
+
                 if(typeof values !== 'object' || values instanceof Array) {
                     values = { data: values };
                 }
