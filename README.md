@@ -5,7 +5,7 @@ Spread props object for vue component.
 
 ## Requirements
 
-* Vue ^1.0
+* Vue <=1.0.17
 
 ## Install
 

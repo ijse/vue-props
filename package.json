@@ -1,5 +1,5 @@
 {
-  "name": "vue-directive-props",
+  "name": "vue-props",
   "version": "1.0.0",
   "description": "Rest and spread properties for component directive",
   "main": "build/vue-props.js",
